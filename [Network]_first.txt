@@ -1,0 +1,8 @@
+Network 종류
+1. Teletphone network(PSTN : Public Switched Telephone Network)
+    -> 모뎀, 전화가 오면 인터넷이 끊어짐
+2. Internet
+3. Cable Network
+4. N-ISDN(Narrowband-Integrated Services Digital Network, 협대역)
+5. B-ISDN(Broadband-Integrated Services Digital Network, 광대역)
+    -> ATM기술(인터넷에 밀려 사라짐, 너무 복잡)
