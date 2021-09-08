@@ -3,31 +3,24 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
-// #docregion MyApp
 class MyApp extends StatelessWidget {
-  // #docregion build
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Startup Name Generator',
+      title: '21800811 Park Sangbeom',
       theme: ThemeData(
-        primaryColor: Colors.white,
+        primaryColor: Colors.blue.shade100,
       ),
       home: RandomWords(),
     );
   }
-// #enddocregion build
 }
-// #enddocregion MyApp
 
-// #docregion RWS-var
 class _RandomWordsState extends State<RandomWords> {
   final _suggestions = <WordPair>[];
   final _saved = <WordPair>{};
   final _biggerFont = const TextStyle(fontSize: 18.0);
-  // #enddocregion RWS-var
 
-  // #docregion _buildSuggestions
   Widget _buildSuggestions() {
     return ListView.builder(
         padding: const EdgeInsets.all(16.0),
@@ -41,9 +34,7 @@ class _RandomWordsState extends State<RandomWords> {
           return _buildRow(_suggestions[index]);
         });
   }
-  // #enddocregion _buildSuggestions
 
-  // #docregion _buildRow
   Widget _buildRow(WordPair pair) {
     final alreadySaved = _saved.contains(pair);
     return ListTile(
@@ -51,9 +42,9 @@ class _RandomWordsState extends State<RandomWords> {
         pair.asPascalCase,
         style: _biggerFont,
       ),
-      trailing: Icon(
-        alreadySaved ? Icons.favorite : Icons.favorite_border,
-        color: alreadySaved ? Colors.red : null,
+      leading: Icon(
+        alreadySaved ? Icons.star : Icons.star_border,
+        color: alreadySaved ? Colors.yellow : null,
         semanticLabel: alreadySaved ? 'Remove from saved' : 'Save',
       ),
       onTap: () {
@@ -67,14 +58,12 @@ class _RandomWordsState extends State<RandomWords> {
       },
     );
   }
-  // #enddocregion _buildRow
 
-  // #docregion RWS-build
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Startup Name Generator'),
+        title: const Text('21800811 Park Sangbeom'),
         actions: [
           IconButton(
             icon: const Icon(Icons.list),
@@ -86,7 +75,6 @@ class _RandomWordsState extends State<RandomWords> {
       body: _buildSuggestions(),
     );
   }
-  // #enddocregion RWS-build
 
   void _pushSaved() {
     Navigator.of(context).push(
@@ -120,9 +108,7 @@ class _RandomWordsState extends State<RandomWords> {
       ),
     );
   }
-// #docregion RWS-var
 }
-// #enddocregion RWS-var
 
 class RandomWords extends StatefulWidget {
   @override
